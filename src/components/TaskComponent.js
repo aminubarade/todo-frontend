@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+
  class Task extends Component {
     constructor(props){
       super(props) 
@@ -16,7 +17,6 @@ import axios from "axios";
             tasks: res.data
          })
       })
-      
     }
 
     render(){
