@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Table from 'react-bootstrap/Table';
+
 
 
  class AllUsers extends Component {
@@ -23,7 +25,25 @@ import axios from "axios";
       const {users} = this.state;
       return (
          <div>
-            {users.map(user => <div key={user.id}>{user.username}</div>)}
+           <Table striped bordered hover size="sm">
+           <thead>
+              <tr>
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Username</th>
+               </tr>
+            </thead>
+            <tbody>
+                {users.map(user => <tr key={user.id}>
+                  <td>{user.id}</td>
+                  <td><a href={"/user/"+user.id}>{user.firstname}</a></td>
+                  <td>{user.lastname}</td>
+                  <td>{user.username}</td>
+                  </tr>)
+               }
+            </tbody>
+           </Table>              
          </div>
          
       )

@@ -5,7 +5,8 @@ import {Routes, Route} from 'react-router-dom';
 //import Task from './components/TaskComponent'
 //import User from './components/UserComponent/UserComponent';
 import Navbar from "./components/navbar";
-import AppRoute from './Routes';
+import AppRoute from './AppRoutes';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
