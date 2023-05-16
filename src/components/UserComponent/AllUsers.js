@@ -1,34 +1,43 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Table from 'react-bootstrap/Table';
 
 
- class AllUsers extends Component {
-    constructor(props){
-      super(props) 
-      this.state = {
-         users: []
-      }
-    }
+const baseURL = "http://localhost:3001/users";
 
-    componentDidMount(){
-      axios.get('http://localhost:3001/users')
-      .then(res => {
-         this.setState({
-            users: res.data
-         })
-      })
-    }
-
-    render(){
-      const {users} = this.state;
+function AllUsers() {
+   const [users, getUsers] = React.useState(null);
+   React.useEffect(() => {
+      axios.get(baseURL).then((response) => {
+        getUsers(response.data);
+      });
+    }, []);
+    
+    if (!users) return null;
       return (
          <div>
-            {users.map(user => <div key={user.id}>{user.username}</div>)}
+           <Table striped bordered hover size="sm">
+           <thead>
+              <tr>
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Username</th>
+               </tr>
+            </thead>
+            <tbody>
+                {users.map(user => <tr key={user.id}>
+                  <td>{user.id}</td>
+                  <td><a href={"/user/"+user.id}>{user.firstname}</a></td>
+                  <td>{user.lastname}</td>
+                  <td>{user.username}</td>
+                  </tr>)
+               }
+            </tbody>
+           </Table>              
          </div>
          
-      )
-
-  };
+      );
  }
 
 

@@ -5,8 +5,8 @@ class Navbar extends Component {
   render(){
     return (
        <nav>
-          <Link to='/' className="App-link">New User</Link> 
-          <Link to="/users" className="App-link">All Users</Link> 
+          <Link to='/create_user' className="App-link">New User</Link> 
+          <Link to="/all_users" className="App-link">All Users</Link> 
        </nav>
        
     )
