@@ -6,6 +6,7 @@ import {useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
+
 function CreateUser() {
    //   const [users, addUser] = useState([]);
   const[user, setUser] = useState({
@@ -29,28 +30,32 @@ function CreateUser() {
       })
   }
 
+  useEffect(() =>{
+     console.log("user created")
+  }, user);
+
   
   return (
     <div>
-     <Form>
+     <Form method='post'>
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Firstname</Form.Label>
-            <Form.Control type="text" placeholder="Enter firstname" name="" />
+            <Form.Control type="text" placeholder="Enter firstname" name="fname"/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Lastname</Form.Label>
-            <Form.Control type="text" placeholder="Enter Lastname" name='' />
+            <Form.Control type="text" placeholder="Enter Lastname" name="lname" />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Username</Form.Label>
-            <Form.Control type="email" placeholder="Enter username" name=''/>
+            <Form.Control type="email" placeholder="Enter username" name="uname"/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="">
             <Form.Label>Email address</Form.Label>
-            <Form.Control type="email" placeholder="Enter email" name='' />
+            <Form.Control type="email" placeholder="Enter email" name="email" />
             <Form.Text className="text-muted">
                We'll never share your email with anyone else.
             </Form.Text>
@@ -58,7 +63,7 @@ function CreateUser() {
 
          <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Password" name="" />
+            <Form.Control type="password" placeholder="Password" name="password" />
          </Form.Group>
 
          <Form.Group className="mb-3" controlId="formBasicPassword">

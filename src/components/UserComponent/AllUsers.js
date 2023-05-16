@@ -3,26 +3,17 @@ import axios from "axios";
 import Table from 'react-bootstrap/Table';
 
 
+const baseURL = "http://localhost:3001/users";
 
- class AllUsers extends Component {
-    constructor(props){
-      super(props) 
-      this.state = {
-         users: []
-      }
-    }
-
-    componentDidMount(){
-      axios.get('http://localhost:3001/users')
-      .then(res => {
-         this.setState({
-            users: res.data
-         })
-      })
-    }
-
-    render(){
-      const {users} = this.state;
+function AllUsers() {
+   const [users, getUsers] = React.useState(null);
+   React.useEffect(() => {
+      axios.get(baseURL).then((response) => {
+        getUsers(response.data);
+      });
+    }, []);
+    
+    if (!users) return null;
       return (
          <div>
            <Table striped bordered hover size="sm">
@@ -46,9 +37,7 @@ import Table from 'react-bootstrap/Table';
            </Table>              
          </div>
          
-      )
-
-  };
+      );
  }
 
 
