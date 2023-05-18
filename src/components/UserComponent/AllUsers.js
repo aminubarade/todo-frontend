@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {useEffect, useState } from 'react';
 import axios from "axios";
 import Table from 'react-bootstrap/Table';
 
@@ -6,8 +7,8 @@ import Table from 'react-bootstrap/Table';
 const baseURL = "http://localhost:3001/users";
 
 function AllUsers() {
-   const [users, getUsers] = React.useState(null);
-   React.useEffect(() => {
+   const [users, getUsers] = useState(null);
+   useEffect(() => {
       axios.get(baseURL).then((response) => {
         getUsers(response.data);
       });
@@ -23,6 +24,7 @@ function AllUsers() {
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Username</th>
+                <th>Action</th>
                </tr>
             </thead>
             <tbody>
@@ -31,6 +33,11 @@ function AllUsers() {
                   <td><a href={"/user/"+user.id}>{user.firstname}</a></td>
                   <td>{user.lastname}</td>
                   <td>{user.username}</td>
+                  <td>
+                  <a href={"/user/"+user.id}>Edit {" "}</a>
+                  <a href={"/user/"+user.id}>Delete</a>
+                  
+                  </td>
                   </tr>)
                }
             </tbody>
