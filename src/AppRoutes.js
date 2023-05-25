@@ -15,8 +15,8 @@ function AppRoute() {
          <Routes>
             <Route path='/' element></Route>
             <Route path='/create_user' element={<CreateUser />} />
-            <Route path='/all_users' element={<AllUsers />} />
-            <Route path='/view_user' element={<ViewUser />} />  
+            <Route path='/users' element={<AllUsers />} />
+            <Route path={`users/view_user/:userId`} element={<ViewUser />} />  
          </Routes>
     </div>
   );
