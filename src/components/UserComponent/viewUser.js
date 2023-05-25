@@ -2,16 +2,19 @@ import React from "react";
 import {useEffect, useState } from 'react';
 import axios from "axios";
 import Table from 'react-bootstrap/Table';
+import { useParams } from "react-router-dom";
 
 
-const baseURL = 'http://localhost:3001/users/1';
+const baseURL = 'http://localhost:3001/users/';
 
 
 function ViewUser() {
+  const params = useParams();
+  const userId = params.userId;
    const [user, getUser] = useState(null);
 
    useEffect(() => {
-      axios.get(baseURL).then((response) => {
+      axios.get(baseURL+userId).then((response) => {
         getUser(response.data);
       });
     }, []);

@@ -17,25 +17,26 @@ function AllUsers() {
     
     if (!users) return null;
     
-    function editUser(){
-      axios
-      .put(`${baseURL}/1`, {
-        username: "Hello World!",
-        firstname: "This is an updated user."
-      })
-      .then((response) => {
-        getUsers(response.data);
-      });
-    }
+    // function editUser(){
+    //   axios
+    //   .put(`${baseURL}/1`, {
+    //     username: "Hello World!",
+    //     firstname: "This is an updated user."
+    //   })
+    //   .then((response) => {
+    //     getUsers(response.data);
+    //   });
+    // }
 
-    function deleteUser(){
-      axios
-      .delete(`${baseURL}/1`)
-      .then(() => {
-        alert("User deleted!");
-        getUsers(null)
-      });
-    }
+    // function deleteUser(){
+    //   axios
+    //   .delete(`${baseURL}/1`)
+    //   .then(() => {
+    //     alert("User deleted!");
+    //     getUsers(null)
+    //   });
+    // }
+    
       return (
          <div>
            <Table striped bordered hover size="sm">
@@ -55,8 +56,8 @@ function AllUsers() {
                   <td>{user.lastname}</td>
                   <td>{user.username}</td>
                   <td>
-                  <a href={`/users/:${user.id}`} onClick={editUser(user.id)}>Edit {" "}</a>
-                  <a href={"/users/:"+user.id} onClick={deleteUser(user.id)}>Delete</a>
+                  <button onClick>Edit</button>
+                  <button onClick>Delete</button>
                   
                   </td>
                   </tr>)
