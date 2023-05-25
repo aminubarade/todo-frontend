@@ -6,7 +6,7 @@ class Navbar extends Component {
     return (
        <nav>
           <Link to='/create_user' className="App-link">New User</Link> 
-          <Link to="/all_users" className="App-link">All Users</Link> 
+          <Link to="/users" className="App-link">All Users</Link> 
        </nav>
        
     )

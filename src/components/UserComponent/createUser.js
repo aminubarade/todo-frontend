@@ -2,7 +2,7 @@
 //import {Routes, Route} from 'react-router-dom';
 // import Navbar from "../../components/navbar";
 // import AppRoute from '../../Routes';
-import {useEffect, useState } from 'react';
+import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import axios from "axios";
