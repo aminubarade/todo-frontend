@@ -26,6 +26,7 @@ function ViewUser() {
 
       return (
          <div>
+         <h1>User Profile</h1>
            <Table striped bordered hover size="sm">
            <thead>
               <tr>
@@ -45,7 +46,8 @@ function ViewUser() {
                  <td>{user[0].email}</td>
               </tr>
             </tbody>
-           </Table>          
+           </Table> 
+           <h6><a href="/tasks">Tasks</a></h6>         
          </div>
       )
  }
