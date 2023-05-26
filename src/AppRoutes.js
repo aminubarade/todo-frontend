@@ -7,6 +7,8 @@ import {Routes, Route} from 'react-router-dom';
 import CreateUser from './components/UserComponent/createUser';
 import AllUsers from './components/UserComponent/AllUsers';
 import ViewUser from './components/UserComponent/viewUser';
+import Task from './components/TaskComponent/Task';
+import ViewTask from './components/TaskComponent/viewTask';
 
 
 function AppRoute() {
@@ -17,6 +19,10 @@ function AppRoute() {
             <Route path='/create_user' element={<CreateUser />} />
             <Route path='/users' element={<AllUsers />} />
             <Route path={`users/view_user/:userId`} element={<ViewUser />} />  
+
+            <Route path={`/tasks`} element={<Task />} /> 
+            <Route path={`tasks/view_task/:taskId`} element={<ViewTask />} />  
+
          </Routes>
     </div>
   );

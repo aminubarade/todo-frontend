@@ -2,16 +2,19 @@ import React from "react";
 import {useEffect, useState } from 'react';
 import axios from "axios";
 import Table from 'react-bootstrap/Table';
+import { useParams } from "react-router-dom";
 
 
-const baseURL = 'http://localhost:3001/users/1';
+const baseURL = 'http://localhost:3001/users/';
 
 
 function ViewUser() {
+  const params = useParams();
+  const userId = params.userId;
    const [user, getUser] = useState(null);
 
    useEffect(() => {
-      axios.get(baseURL).then((response) => {
+      axios.get(baseURL+userId).then((response) => {
         getUser(response.data);
       });
     }, []);
@@ -23,6 +26,7 @@ function ViewUser() {
 
       return (
          <div>
+         <h1>User Profile</h1>
            <Table striped bordered hover size="sm">
            <thead>
               <tr>
@@ -42,7 +46,8 @@ function ViewUser() {
                  <td>{user[0].email}</td>
               </tr>
             </tbody>
-           </Table>          
+           </Table> 
+           <h6><a href="/tasks">Tasks</a></h6>         
          </div>
       )
  }
