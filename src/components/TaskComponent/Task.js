@@ -18,10 +18,12 @@ function Tasks() {
     if (!tasks) return null;
     
       return (
-         <div>
+         <div className="all-users p-5">
+         <h1>Tasks</h1>
+         <span>Filter | </span> <span> <Link to='/create_task' className="navbar-brand">New Task</Link> </span>
            <Table striped bordered hover size="sm">
            <thead>
-              <tr>
+              <tr className="bg-dark text-white">
                 <th>#</th>
                 <th>Task Name</th>
                 <th>Status</th>

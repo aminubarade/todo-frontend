@@ -9,3 +9,7 @@ This is the frontend of the <a href="https://github.com/aminubarade/todo">TodoAp
 #
 
 The frontend is designed using reactJS
+
+# Installation
+
+

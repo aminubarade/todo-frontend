@@ -13,7 +13,7 @@ import ViewTask from './components/TaskComponent/viewTask';
 
 function AppRoute() {
   return (
-    <div className="App">
+    <div className="">
          <Routes>
             <Route path='/' element></Route>
             <Route path='/create_user' element={<CreateUser />} />

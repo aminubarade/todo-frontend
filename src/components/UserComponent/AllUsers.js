@@ -5,9 +5,11 @@ import Table from 'react-bootstrap/Table';
 import {Link} from "react-router-dom";
 
 
+
 const baseURL = "http://localhost:3001/users";
 
 function AllUsers() {
+  var counter = 0;
    const [users, getUsers] = useState(null);
    useEffect(() => {
       axios.get(baseURL).then((response) => {
@@ -38,26 +40,30 @@ function AllUsers() {
     // }
     
       return (
-         <div>
+         <div className="all-users p-5">
+         <h1>Users</h1>
+         <span>Filter | </span> <span> <Link to='/create_user' className="navbar-brand">New User</Link> </span>
            <Table striped bordered hover size="sm">
-           <thead>
-              <tr>
+           <thead className="p-4">
+              <tr className="bg-dark text-white">
                 <th>#</th>
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Username</th>
+                <th>Email</th>
                 <th>Action</th>
                </tr>
             </thead>
             <tbody>
                 {users.map(user => <tr key={user.id}>
-                  <td>{user.id}</td>
+                  <td>{++counter}</td>
                   <td><Link to={"/users/view_user/"+user.id}>{user.firstname}</Link> </td>
                   <td>{user.lastname}</td>
                   <td>{user.username}</td>
+                  <td>{user.email}</td>
                   <td>
-                  <button onClick>Edit</button>
-                  <button onClick>Delete</button>
+                  <button>Edit</button>
+                  <button >Delete</button>
                   
                   </td>
                   </tr>)

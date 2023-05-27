@@ -2,7 +2,6 @@ import React from "react";
 import {useEffect, useState } from 'react';
 import axios from "axios";
 import Table from 'react-bootstrap/Table';
-import {Link} from "react-router-dom";
 
 
 const baseURL = "http://localhost:3001/todos";
@@ -18,7 +17,7 @@ function Todos() {
     if (!todos) return null;
     
       return (
-         <div>
+         <div className="">
            <Table striped bordered hover size="sm">
            <thead>
               <tr>
@@ -32,7 +31,7 @@ function Todos() {
             <tbody>
                 {todos.map(todo => <tr key={todo.id}>
                   <td>{todo.id}</td>
-                  <td><Link to={"/tasks/view_task/"+todo.id}>{todo.todo}</Link> </td>
+                  <td>{todo.todo}</td>
                   <td>{todo.status}</td>
                   <td></td>
                   <td>

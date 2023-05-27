@@ -17,15 +17,13 @@ function ViewUser() {
       axios.get(baseURL+userId).then((response) => {
         getUser(response.data);
       });
-    }, []);
+    },);
     
     if (!user) return null;
 
-    function editUser(id){}
-    function deleteUser(id){}
 
       return (
-         <div>
+         <div className="all-users p-4">
          <h1>User Profile</h1>
            <Table striped bordered hover size="sm">
            <thead>
@@ -47,7 +45,7 @@ function ViewUser() {
               </tr>
             </tbody>
            </Table> 
-           <h6><a href="/tasks">Tasks</a></h6>         
+           <h6><a href="/tasks">{user[0].username} Tasks</a></h6>         
          </div>
       )
  }
