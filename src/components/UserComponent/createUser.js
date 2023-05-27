@@ -31,7 +31,11 @@ function CreateUser() {
   }
 
   return (
-    <div>
+    <div className='all-users'>
+    <div className='row'>
+    <div className='col-2'></div>
+    <div className='col-6'>
+    <h1>Registration</h1>
      <Form method='post' onSubmit={updateState}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Firstname</Form.Label>
@@ -80,7 +84,12 @@ function CreateUser() {
            Submit
         </Button>
      </Form>
+     </div>
 
+     <div className='col-4'></div>
+
+
+     </div>
     </div>
   );
 }

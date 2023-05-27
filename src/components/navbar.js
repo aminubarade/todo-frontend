@@ -1,12 +1,10 @@
 import React, { Component } from "react";
-import {Link} from "react-router-dom";
 
 class Navbar extends Component {
   render(){
     return (
-       <nav>
-          <Link to='/create_user' className="App-link">New User</Link> 
-          <Link to="/users" className="App-link">All Users</Link> 
+       <nav className="navbar navbar-expand-lg navbar-dark bg-dark p-3 mb-2">
+          <p className="navbar-brand">Task Management Application</p> 
        </nav>
        
     )
