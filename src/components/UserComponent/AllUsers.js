@@ -43,7 +43,7 @@ function AllUsers() {
          <div className="all-users p-5">
          <h1>Users</h1>
          <span>Filter | </span> <span> <Link to='/create_user' className="navbar-brand">New User</Link> </span>
-           <Table striped bordered hover size="sm">
+           <Table striped  hover size="sm" className="table-responsive">
            <thead className="p-4">
               <tr className="bg-dark text-white">
                 <th>#</th>
@@ -61,10 +61,9 @@ function AllUsers() {
                   <td>{user.lastname}</td>
                   <td>{user.username}</td>
                   <td>{user.email}</td>
-                  <td>
-                  <button>Edit</button>
-                  <button >Delete</button>
-                  
+                  <td className="">
+                  <button className="m-0">Edit</button>
+                  <button className="m-0">Delete</button>
                   </td>
                   </tr>)
                }

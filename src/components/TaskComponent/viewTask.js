@@ -26,7 +26,7 @@ function ViewTask() {
          <h1>Task: {task[0].task}</h1>
          <h6>Description: {task[0].description}</h6>
          <br></br>
-         <h6>Todos: {task[0].description}</h6>
+         <h5>Progress: 0%</h5>
            <Todos></Todos>        
          </div>
       )

@@ -24,7 +24,7 @@ function ViewUser() {
 
       return (
          <div className="all-users p-4">
-         <h1>User Profile</h1>
+         <h1>{user[0].username} Profile</h1>
            <Table striped bordered hover size="sm">
            <thead>
               <tr>

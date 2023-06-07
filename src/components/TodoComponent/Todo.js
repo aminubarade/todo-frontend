@@ -23,8 +23,8 @@ function Todos() {
               <tr>
                 <th>#</th>
                 <th>Todo Name</th>
-                <th>Status</th>
-                <th>Mark</th>
+                <th>Complete</th>
+                <th>Date</th>
                 <th>Action</th>
                </tr>
             </thead>
@@ -32,12 +32,10 @@ function Todos() {
                 {todos.map(todo => <tr key={todo.id}>
                   <td>{todo.id}</td>
                   <td>{todo.todo}</td>
-                  <td>{todo.status}</td>
-                  <td></td>
+                  <td><input type="checkbox" className="m-2"/><span>Done</span></td>
+                  <td>{Date.parse(todo.createdAt)}</td>
                   <td>
-                  <button onClick>Edit</button>
-                  <button onClick>Delete</button>
-                  
+                  <button className="btn">Delete</button>                  
                   </td>
                   </tr>)
                }

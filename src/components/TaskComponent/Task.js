@@ -26,8 +26,9 @@ function Tasks() {
               <tr className="bg-dark text-white">
                 <th>#</th>
                 <th>Task Name</th>
+                <th>Progress</th>
+                <th>Members</th>
                 <th>Status</th>
-                <th>Description</th>
                 <th>Action</th>
                </tr>
             </thead>
@@ -35,12 +36,12 @@ function Tasks() {
                 {tasks.map(task => <tr key={task.id}>
                   <td>{task.id}</td>
                   <td><Link to={"/tasks/view_task/"+task.id}>{task.task}</Link> </td>
-                  <td>{task.status}</td>
-                  <td>{task.description}</td>
+                  <td>In Progress: 90%</td>
+                  <td>User 1, User 2, User 3</td>
+                  <td>Active</td>
                   <td>
                   <button onClick>Edit</button>
                   <button onClick>Delete</button>
-                  
                   </td>
                   </tr>)
                }
