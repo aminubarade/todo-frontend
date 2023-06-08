@@ -1,11 +1,9 @@
-//import logo from './logo.svg';
-//import {Routes, Route} from 'react-router-dom';
-// import Navbar from "../../components/navbar";
-// import AppRoute from '../../Routes';
-import { useState } from 'react';
+import {useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import axios from "axios";
+import React from "react";
+import DashboardLayout from "../DashboardLayout";
 
 const baseUrl = 'http://localhost:3001/users';
 
@@ -31,11 +29,8 @@ function CreateUser() {
   }
 
   return (
-    <div className='all-users'>
-    <div className='row'>
-    <div className='col-2'></div>
-    <div className='col-6'>
-    <h1>Registration</h1>
+   <DashboardLayout>
+    <h1>New User</h1>
      <Form method='post' onSubmit={updateState}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Firstname</Form.Label>
@@ -84,13 +79,7 @@ function CreateUser() {
            Submit
         </Button>
      </Form>
-     </div>
-
-     <div className='col-4'></div>
-
-
-     </div>
-    </div>
+   </DashboardLayout>
   );
 }
 
