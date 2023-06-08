@@ -3,6 +3,7 @@ import {useEffect, useState } from 'react';
 import axios from "axios";
 import Table from 'react-bootstrap/Table';
 import {Link} from "react-router-dom";
+import DashboardLayout from "../DashboardLayout";
 
 
 
@@ -40,18 +41,18 @@ function AllUsers() {
     // }
     
       return (
-         <div className="all-users p-5">
+      <DashboardLayout>
          <h1>Users</h1>
          <span>Filter | </span> <span> <Link to='/create_user' className="navbar-brand">New User</Link> </span>
-           <Table striped  hover size="sm" className="table-responsive">
-           <thead className="p-4">
-              <tr className="bg-dark text-white">
-                <th>#</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Username</th>
-                <th>Email</th>
-                <th>Action</th>
+           <Table striped  hover className="border table-bordered table-hover table-responsive shadow p-3 mb-5  rounded">
+           <thead className="thead-dark">
+              <tr className="table-secondary">
+                <th scope="col">serial</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Username</th>
+                <th scope="col">Email</th>
+                <th scope="col">Action</th>
                </tr>
             </thead>
             <tbody>
@@ -69,8 +70,7 @@ function AllUsers() {
                }
             </tbody>
            </Table>              
-         </div>
-         
+      </DashboardLayout>
       );
  }
 

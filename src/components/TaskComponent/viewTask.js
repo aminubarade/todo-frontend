@@ -3,6 +3,7 @@ import {useEffect, useState } from 'react';
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import Todos from "../TodoComponent/Todo";
+import DashboardLayout from "../DashboardLayout";
 
 
 const baseURL = 'http://localhost:3001/tasks/';
@@ -22,13 +23,13 @@ function ViewTask() {
     if (!task) return null;
 
       return (
-         <div className="all-users p-5">
+        <DashboardLayout>
          <h1>Task: {task[0].task}</h1>
          <h6>Description: {task[0].description}</h6>
          <br></br>
          <h5>Progress: 0%</h5>
            <Todos></Todos>        
-         </div>
+        </DashboardLayout>
       )
  }
 export default ViewTask;

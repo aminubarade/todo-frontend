@@ -1,33 +1,30 @@
 //import logo from './logo.svg';
-import './App.css';
+import '../App.css';
 //import {Routes, Route} from 'react-router-dom';
 //import Todo from './components/TodoComponent'
 //import Task from './components/TaskComponent'
 //import User from './components/UserComponent/UserComponent';
-import Navbar from "./components/navbar";
-import AppRoute from './AppRoutes';
+import Navbar from "./Navbar";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Sidebar from './components/sidebar';
+import Sidebar from './Sidebar';
 
-function App() {
+function DashboardLayout({children}) {
   return (
-    <div className="App">
-     <div className='row'>
-        <div className='col-2 bg-dark p-0'>
+     <div className='container-fluid p-0'>
+        <div className='sidenav'>
           <Sidebar></Sidebar>
         </div>
 
-        <div className='col-10 p-0'>  
+        <div className='main'>  
           <div className="nav">
             <Navbar />
           </div>
-            <AppRoute>
-          
-            </AppRoute>
+          <div className="p-5">
+            {children}
           </div>
         </div>
-      </div>
+        </div>
   );
 }
 
-export default App;
+export default DashboardLayout;

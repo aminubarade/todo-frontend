@@ -2,7 +2,7 @@ import React from "react";
 import {useEffect, useState } from 'react';
 import axios from "axios";
 import Table from 'react-bootstrap/Table';
-
+import DashboardLayout from "../DashboardLayout";
 
 const baseURL = "http://localhost:3001/todos";
 
@@ -17,8 +17,8 @@ function Todos() {
     if (!todos) return null;
     
       return (
-         <div className="">
-           <Table striped bordered hover size="sm">
+        <div>
+          <Table striped bordered hover size="sm" className="border table-bordered table-hover table-responsive shadow p-3 mb-5  rounded">
            <thead>
               <tr>
                 <th>#</th>
@@ -40,8 +40,8 @@ function Todos() {
                   </tr>)
                }
             </tbody>
-           </Table>              
-         </div>
+          </Table>
+        </div>               
       );
  }
 

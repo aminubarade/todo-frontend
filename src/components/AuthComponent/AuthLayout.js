@@ -6,9 +6,9 @@ import { Outlet } from 'react-router-dom';
 
 function AuthLayout({children}) {
   return (
-    <div className='row p-5'>
+    <div className='row'>
      <div className='col-4'></div>
-     <div className='col-4'>
+     <div className='col-4 p-2'>
         {children}
      </div>
      <div className='col-4'></div>

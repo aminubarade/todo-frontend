@@ -3,6 +3,7 @@ import {useEffect, useState } from 'react';
 import axios from "axios";
 import Table from 'react-bootstrap/Table';
 import { useParams } from "react-router-dom";
+import DashboardLayout from "../DashboardLayout";
 
 
 const baseURL = 'http://localhost:3001/users/';
@@ -23,7 +24,7 @@ function ViewUser() {
 
 
       return (
-         <div className="all-users p-4">
+        <DashboardLayout>
          <h1>{user[0].username} Profile</h1>
            <Table striped bordered hover size="sm">
            <thead>
@@ -45,8 +46,9 @@ function ViewUser() {
               </tr>
             </tbody>
            </Table> 
-           <h6><a href="/tasks">{user[0].username} Tasks</a></h6>         
-         </div>
+           <h6><a href="/tasks">{user[0].username} Tasks</a></h6> 
+        </DashboardLayout>        
+
       )
  }
 export default ViewUser;

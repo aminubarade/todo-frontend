@@ -6,6 +6,7 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import axios from "axios";
+import DashboardLayout from "../DashboardLayout";
 
 const baseUrl = 'http://localhost:3001/tasks';
 
@@ -29,10 +30,7 @@ function CreateTask() {
   }
 
   return (
-    <div className='all-users'>
-    <div className='row'>
-    <div className='col-2'></div>
-    <div className='col-6'>
+   <DashboardLayout>
     <h1>Create Task</h1>
      <Form method='post' onSubmit={updateState}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -72,13 +70,8 @@ function CreateTask() {
            Create
         </Button>
      </Form>
-     </div>
+    </DashboardLayout>
 
-     <div className='col-4'></div>
-
-
-     </div>
-    </div>
   );
 } 
 
