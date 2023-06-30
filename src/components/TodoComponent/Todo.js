@@ -2,7 +2,7 @@ import React from "react";
 import {useEffect, useState } from 'react';
 import axios from "axios";
 import Table from 'react-bootstrap/Table';
-import DashboardLayout from "../DashboardLayout";
+//import DashboardLayout from "../DashboardLayout";
 
 const baseURL = "http://localhost:3001/todos";
 
